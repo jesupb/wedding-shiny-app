@@ -8,12 +8,13 @@
 #
 
 library(shiny)
+library(DT)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
 
     # Application title
-    titlePanel("Old Faithful Geyser Data"),
+    titlePanel("Distribucion de mesas"),
 
     # Sidebar with a slider input for number of bins 
     sidebarLayout(
@@ -27,14 +28,22 @@ ui <- fluidPage(
 
         # Show a plot of the generated distribution
         mainPanel(
-           plotOutput("distPlot")
+            tabsetPanel(
+                type = "tabs",
+                tabPanel("Distribucion de mesas", DT::dataTableOutput("mytable")),
+                tabPanel("Menu"),
+                tabPanel("Bebidas")
+            )
+            
         )
     )
 )
 
 # Define server logic required to draw a histogram
 server <- function(input, output) {
-
+    
+    filedata <- read.csv("sitting_distro.csv")
+    
     output$distPlot <- renderPlot({
         # generate bins based on input$bins from ui.R
         x    <- faithful[, 2]
@@ -42,6 +51,10 @@ server <- function(input, output) {
 
         # draw the histogram with the specified number of bins
         hist(x, breaks = bins, col = 'darkgray', border = 'white')
+    })
+    
+    output$mytable = DT::renderDataTable({
+        filedata
     })
 }
 

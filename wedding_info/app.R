@@ -19,20 +19,30 @@ ui <- fluidPage(
     # Sidebar with a slider input for number of bins 
     sidebarLayout(
         sidebarPanel(
-            sliderInput("bins",
-                        "Number of bins:",
-                        min = 1,
-                        max = 50,
-                        value = 30)
         ),
 
         # Show a plot of the generated distribution
         mainPanel(
             tabsetPanel(
                 type = "tabs",
-                tabPanel("Distribucion de mesas", DT::dataTableOutput("mytable")),
-                tabPanel("Menu"),
-                tabPanel("Bebidas")
+                tabPanel(
+                    "Distribucion de mesas",
+                     h2("Por favor, ingrese su nombre o apellido"),
+                     br(),
+                     DT::dataTableOutput("mytable")
+                    ),
+                tabPanel(
+                    "Menu",
+                    img(src="menu.png", align = "center")
+                    ),
+                tabPanel(
+                    "Bebidas",
+                    img(src="menu.png", align = "center")
+                    ),
+                tabPanel(
+                    "Cronograma",
+                    img(src="menu.png", align = "center")
+                    )
             )
             
         )
@@ -43,10 +53,11 @@ ui <- fluidPage(
 server <- function(input, output) {
     
     filedata <- read.csv(url("https://raw.githubusercontent.com/jesupb/wedding-shiny-app/main/wedding_info/sitting_distro.csv"))
+    #filedata <- read.csv("sitting_distro.csv")
     
-    output$mytable = DT::renderDataTable({
-        filedata
-    })
+    output$mytable = DT::renderDT(
+        filedata, options = list(dom = 'f'),rownames= FALSE
+    )
 }
 
 # Run the application 

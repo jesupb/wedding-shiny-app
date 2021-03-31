@@ -42,7 +42,7 @@ ui <- fluidPage(
 # Define server logic required to draw a histogram
 server <- function(input, output) {
     
-    filedata <- read.csv("sitting_distro.csv")
+    filedata <- read.csv(url("https://raw.githubusercontent.com/jesupb/wedding-shiny-app/main/wedding_info/sitting_distro.csv"))
     
     output$distPlot <- renderPlot({
         # generate bins based on input$bins from ui.R

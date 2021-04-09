@@ -12,41 +12,38 @@ library(DT)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
+    
+    tags$head(
+        tags$link(rel = "stylesheet", type = "text/css", href = "fonts.css")
+    ),
 
     # Application title
-    titlePanel("Distribucion de mesas"),
+    titlePanel(h1("Boda Pacheco Medina")),
 
-    # Sidebar with a slider input for number of bins 
-    sidebarLayout(
-        sidebarPanel(
+    tabsetPanel(                
+        type = "pills",
+        tabPanel(
+        
+            "Distribucion de mesas",
+            h4("Por favor, ingrese su nombre o apellido en la barra de busqueda."),
+            br(),
+            DT::dataTableOutput("mytable")
         ),
-
-        # Show a plot of the generated distribution
-        mainPanel(
-            tabsetPanel(
-                type = "tabs",
-                tabPanel(
-                    "Distribucion de mesas",
-                     h2("Por favor, ingrese su nombre o apellido"),
-                     br(),
-                     DT::dataTableOutput("mytable")
-                    ),
-                tabPanel(
-                    "Menu",
-                    img(src="menu.png", align = "center")
-                    ),
-                tabPanel(
-                    "Bebidas",
-                    img(src="menu.png", align = "center")
-                    ),
-                tabPanel(
-                    "Cronograma",
-                    img(src="menu.png", align = "center")
-                    )
-            )
-            
-        )
+        tabPanel(
+            "Menu",
+            img(src="menu.png", align = "center")
+        ),
+        tabPanel(
+            "Bebidas",
+            img(src="bebidas.png", align = "center")
+        ),
+        tabPanel(
+            "Cronograma",
+            img(src="cronograma.png", align = "center")
     )
+    )
+
+    
 )
 
 # Define server logic required to draw a histogram

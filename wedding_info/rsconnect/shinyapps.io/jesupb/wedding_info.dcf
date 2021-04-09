@@ -5,9 +5,9 @@ account: jesupb
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 3887945
-bundleId: 4414017
+bundleId: 4414027
 url: https://jesupb.shinyapps.io/wedding_info/
-when: 1617153221.46972
+when: 1617153475.09401
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: sitting_distro.csv

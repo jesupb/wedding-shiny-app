@@ -31,19 +31,19 @@ ui <- fluidPage(
         ),
         tabPanel(
             "Menu",
-            img(src="menu.png", align = "center")
+            img(src="https://raw.githubusercontent.com/jesupb/wedding-shiny-app/main/wedding_info/www/menu.png", align = "center")
         ),
         tabPanel(
             "Coctel",
-            img(src="menu_coctel.png", align = "center")
+            img(src="https://raw.githubusercontent.com/jesupb/wedding-shiny-app/main/wedding_info/www/menu_coctel.png", align = "center")
         ),
         tabPanel(
             "Bebidas",
-            img(src="menu_bar.png", align = "center")
+            img(src="https://raw.githubusercontent.com/jesupb/wedding-shiny-app/main/wedding_info/www/menu_bar.png", align = "center")
         ),
         tabPanel(
             "Cronograma",
-            img(src="cronograma.png", align = "center")
+            img(src="https://raw.githubusercontent.com/jesupb/wedding-shiny-app/main/wedding_info/www/cronograma.png", align = "center")
     )
     )
 

@@ -24,27 +24,31 @@ ui <- fluidPage(
         type = "pills",
         tabPanel(
         
-            "Distribucion de mesas",
-            h4("Por favor, ingrese su nombre o apellido en la barra de busqueda."),
+            "Distribución \nde mesas",
+            h4("Por favor, ingrese su nombre o apellido en la barra de búsqueda."),
             br(),
             DT::dataTableOutput("mytable")
         ),
         tabPanel(
-            "Menu",
-            img(src="https://raw.githubusercontent.com/jesupb/wedding-shiny-app/main/wedding_info/www/menu.png", align = "center")
+            "Cronograma",
+            img(src="https://raw.githubusercontent.com/jesupb/wedding-shiny-app/main/wedding_info/www/cronograma.png", 
+                height="100%", width="100%", align="left")
         ),
         tabPanel(
-            "Coctel",
-            img(src="https://raw.githubusercontent.com/jesupb/wedding-shiny-app/main/wedding_info/www/menu_coctel.png", align = "center")
+            "Menú",
+            img(src="https://raw.githubusercontent.com/jesupb/wedding-shiny-app/main/wedding_info/www/menu.png", 
+                height="100%", width="100%", align="left")
+        ),
+        tabPanel(
+            "Cóctel",
+            img(src="https://raw.githubusercontent.com/jesupb/wedding-shiny-app/main/wedding_info/www/menu_coctel.png", 
+                height="100%", width="100%", align="left")
         ),
         tabPanel(
             "Bebidas",
-            img(src="https://raw.githubusercontent.com/jesupb/wedding-shiny-app/main/wedding_info/www/menu_bar.png", align = "center")
-        ),
-        tabPanel(
-            "Cronograma",
-            img(src="https://raw.githubusercontent.com/jesupb/wedding-shiny-app/main/wedding_info/www/cronograma.png", align = "center")
-    )
+            img(src="https://raw.githubusercontent.com/jesupb/wedding-shiny-app/main/wedding_info/www/menu_bar.png", 
+                height="100%", width="100%", align="left")
+        )
     )
 
     

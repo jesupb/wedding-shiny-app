@@ -34,8 +34,12 @@ ui <- fluidPage(
             img(src="menu.png", align = "center")
         ),
         tabPanel(
+            "Coctel",
+            img(src="menu_coctel.png", align = "center")
+        ),
+        tabPanel(
             "Bebidas",
-            img(src="bebidas.png", align = "center")
+            img(src="menu_bar.png", align = "center")
         ),
         tabPanel(
             "Cronograma",

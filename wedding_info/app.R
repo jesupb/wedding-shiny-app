@@ -48,6 +48,11 @@ ui <- fluidPage(
             "Bebidas",
             img(src="https://raw.githubusercontent.com/jesupb/wedding-shiny-app/main/wedding_info/www/menu_bar.png", 
                 height="100%", width="100%", align="left")
+        ),
+        tabPanel(
+            "Bocadillos",
+            img(src="https://raw.githubusercontent.com/jesupb/wedding-shiny-app/main/wedding_info/www/bocadillos.JPG", 
+                height="100%", width="100%", align="left")
         )
     )
 
